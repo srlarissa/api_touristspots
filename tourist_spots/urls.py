@@ -21,11 +21,14 @@ from django.conf.urls import include
 from core.api.viewsets import TouristSpotsViewSet
 from attractions.api.viewsets import AttractionsViewSet
 from localizations.api.viewsets import LocalizationsViewSet
+from comments.api.viewsets import CommentsViewSet
 
 router = routers.DefaultRouter()
 router.register(r'touristspots', TouristSpotsViewSet)
 router.register(r'attractions', AttractionsViewSet)
 router.register(r'localizations', LocalizationsViewSet)
+router.register(r'comments', CommentsViewSet)
+
 
 
 urlpatterns = [
