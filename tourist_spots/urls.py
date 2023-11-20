@@ -18,10 +18,12 @@ from django.urls import path
 from django.contrib import admin
 from rest_framework import routers
 from django.conf.urls import include
-from core.api.viewsets import TouristSpotViewSet
+from core.api.viewsets import TouristSpotsViewSet
+from attractions.api.viewsets import AttractionsViewSet
 
 router = routers.DefaultRouter()
-router.register(r'touristspots', TouristSpotViewSet)
+router.register(r'touristspots', TouristSpotsViewSet)
+router.register(r'attractions', AttractionsViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
