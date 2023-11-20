@@ -22,14 +22,14 @@ from core.api.viewsets import TouristSpotsViewSet
 from attractions.api.viewsets import AttractionsViewSet
 from localizations.api.viewsets import LocalizationsViewSet
 from comments.api.viewsets import CommentsViewSet
+from ratings.api.viewsets import RatingsViewSet
 
 router = routers.DefaultRouter()
 router.register(r'touristspots', TouristSpotsViewSet)
 router.register(r'attractions', AttractionsViewSet)
 router.register(r'localizations', LocalizationsViewSet)
 router.register(r'comments', CommentsViewSet)
-
-
+router.register(r'ratings', RatingsViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
