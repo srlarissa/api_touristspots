@@ -20,10 +20,13 @@ from rest_framework import routers
 from django.conf.urls import include
 from core.api.viewsets import TouristSpotsViewSet
 from attractions.api.viewsets import AttractionsViewSet
+from localizations.api.viewsets import LocalizationsViewSet
 
 router = routers.DefaultRouter()
 router.register(r'touristspots', TouristSpotsViewSet)
 router.register(r'attractions', AttractionsViewSet)
+router.register(r'localizations', LocalizationsViewSet)
+
 
 urlpatterns = [
     path('', include(router.urls)),
