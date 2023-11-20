@@ -18,18 +18,18 @@ from django.urls import path
 from django.contrib import admin
 from rest_framework import routers
 from django.conf.urls import include
-from core.api.viewsets import TouristSpotsViewSet
-from attractions.api.viewsets import AttractionsViewSet
-from localizations.api.viewsets import LocalizationsViewSet
-from comments.api.viewsets import CommentsViewSet
-from ratings.api.viewsets import RatingsViewSet
+from core.api.viewsets import TouristSpotViewSet
+from attractions.api.viewsets import AttractionViewSet
+from localizations.api.viewsets import LocalizationViewSet
+from comments.api.viewsets import CommentViewSet
+from ratings.api.viewsets import RatingViewSet
 
 router = routers.DefaultRouter()
-router.register(r'touristspots', TouristSpotsViewSet)
-router.register(r'attractions', AttractionsViewSet)
-router.register(r'localizations', LocalizationsViewSet)
-router.register(r'comments', CommentsViewSet)
-router.register(r'ratings', RatingsViewSet)
+router.register(r'touristspots', TouristSpotViewSet)
+router.register(r'attractions', AttractionViewSet)
+router.register(r'localizations', LocalizationViewSet)
+router.register(r'comments', CommentViewSet)
+router.register(r'ratings', RatingViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
