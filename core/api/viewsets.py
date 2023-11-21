@@ -3,5 +3,7 @@ from core.models import TouristSpot
 from .serializers import TouristSpotSerializer
 
 class TouristSpotViewSet(ModelViewSet):
-    queryset = TouristSpot.objects.all()
     serializer_class = TouristSpotSerializer
+
+    def get_queryset(self):
+       return TouristSpot.objects.filter(approved=True)

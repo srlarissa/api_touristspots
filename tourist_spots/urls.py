@@ -25,7 +25,7 @@ from comments.api.viewsets import CommentViewSet
 from ratings.api.viewsets import RatingViewSet
 
 router = routers.DefaultRouter()
-router.register(r'touristspots', TouristSpotViewSet)
+router.register(r'touristspots', TouristSpotViewSet, basename='TouristSpot')
 router.register(r'attractions', AttractionViewSet)
 router.register(r'localizations', LocalizationViewSet)
 router.register(r'comments', CommentViewSet)
