@@ -18,6 +18,8 @@ from django.urls import path
 from django.contrib import admin
 from rest_framework import routers
 from django.conf.urls import include
+from django.conf import settings
+from django.conf.urls.static import static
 from core.api.viewsets import TouristSpotViewSet
 from attractions.api.viewsets import AttractionViewSet
 from localizations.api.viewsets import LocalizationViewSet
@@ -34,4 +36,4 @@ router.register(r'ratings', RatingViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
