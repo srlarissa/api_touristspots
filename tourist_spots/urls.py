@@ -16,15 +16,16 @@ Including another URLconf
 """
 from django.urls import path
 from django.contrib import admin
+from django.conf import settings
 from rest_framework import routers
 from django.conf.urls import include
-from django.conf import settings
 from django.conf.urls.static import static
+from ratings.api.viewsets import RatingViewSet
 from core.api.viewsets import TouristSpotViewSet
+from comments.api.viewsets import CommentViewSet
 from attractions.api.viewsets import AttractionViewSet
 from localizations.api.viewsets import LocalizationViewSet
-from comments.api.viewsets import CommentViewSet
-from ratings.api.viewsets import RatingViewSet
+from rest_framework.authtoken.views import obtain_auth_token
 
 router = routers.DefaultRouter()
 router.register(r'touristspots', TouristSpotViewSet, basename='TouristSpot')
@@ -36,4 +37,5 @@ router.register(r'ratings', RatingViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
+    path('api-token-auth/', obtain_auth_token)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
